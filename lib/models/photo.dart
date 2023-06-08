@@ -1,6 +1,7 @@
 class Photo {
   Photo({
     required this.id,
+    required this.title,
     required this.slug,
     required this.createdAt,
     required this.updatedAt,
@@ -8,10 +9,10 @@ class Photo {
     required this.description,
     required this.altDescription,
     required this.urls,
-    required this.links,
     required this.user,
   });
   late final String id;
+  late final String title;
   late final String slug;
   late final String createdAt;
   late final String updatedAt;
@@ -19,7 +20,6 @@ class Photo {
   late final String description;
   late final String altDescription;
   late final Urls urls;
-  late final Links links;
   late final User user;
 
   Photo.fromJson(Map<String, dynamic> json){
@@ -29,9 +29,9 @@ class Photo {
     updatedAt = json['updated_at'];
     blurHash = json['blur_hash'];
     description = json['description'] ?? '';
-    altDescription = json['alt_description'];
+    title = json['title'] ?? '';
+    altDescription = json['alt_description'] ?? '';
     urls = Urls.fromJson(json['urls']);
-    links = Links.fromJson(json['links']);
     user = User.fromJson(json['user']);
   }
 }
@@ -62,27 +62,6 @@ class Urls {
   }
 
 }
-
-class Links {
-  Links({
-    required this.self,
-    required this.html,
-    required this.download,
-    required this.downloadLocation,
-  });
-  late final String self;
-  late final String html;
-  late final String download;
-  late final String downloadLocation;
-
-  Links.fromJson(Map<String, dynamic> json){
-    self = json['self'];
-    html = json['html'];
-    download = json['download'];
-    downloadLocation = json['download_location'];
-  }
-}
-
 
 class Social {
   Social({
@@ -117,7 +96,6 @@ class User {
     required this.portfolioUrl,
     required this.bio,
     required this.location,
-    required this.links,
     required this.instagramUsername,
     required this.totalCollections,
     required this.totalLikes,
@@ -136,7 +114,6 @@ class User {
   late final String portfolioUrl;
   late final String bio;
   late final String location;
-  late final Links links;
   late final String instagramUsername;
   late final int totalCollections;
   late final int totalLikes;
@@ -149,14 +126,13 @@ class User {
     id = json['id'];
     updatedAt = json['updated_at'];
     username = json['username'];
-    name = json['name'];
-    firstName = json['first_name'];
-    lastName = json['last_name'];
+    name = json['name'] ?? '';
+    firstName = json['first_name'] ?? '';
+    lastName = json['last_name'] ?? '';
     twitterUsername = json['twitter_username'] ?? '';
-    portfolioUrl = json['portfolio_url'];
-    bio = json['bio'];
+    portfolioUrl = json['portfolio_url'] ?? '';
+    bio = json['bio'] ?? '';
     location = json['location'] ?? '';
-    links = Links.fromJson(json['links']);
     instagramUsername = json['instagram_username'] ?? '';
     totalCollections = json['total_collections'];
     totalLikes = json['total_likes'];

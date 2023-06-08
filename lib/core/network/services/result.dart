@@ -52,39 +52,12 @@ class RequestStateNotifier<T> extends StateNotifier<RequestState<T>> {
     }
   }
 
-  String getErrorMessage(Exception e) {
-    bool isDioError = e is DioError;
-    if (isDioError) {
-      if ((e.type == DioErrorType.unknown &&
-              e.error != null &&
-              e.error is SocketException) ||
-          e.type == DioErrorType.receiveTimeout ||
-          e.type == DioErrorType.connectionTimeout) {
-        return 'Unable to connect, Check your internet connection';
-      }
-      if ((e.response?.statusCode == 403) ||
-          (e.response == null && e.type == DioErrorType.unknown)) {
-        return '';
-      }
-    }
-
-    return AppError(e).serverError?.message ?? 'An error occurred';
-  }
-
-  void changeStateToIdle() {
-    state = RequestState<T>.idle();
-  }
-
   dynamic getSuccessData() {
     return state.when(
         idle: () {},
         loading: () {},
         success: (data) => data,
         error: (error) {});
-  }
-
-  void updateStateData(dynamic data) {
-    state = RequestState<T>.success(data);
   }
 }
 

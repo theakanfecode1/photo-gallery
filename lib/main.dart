@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:photo_gallery/res/style/app_colors.dart';
+import 'package:photo_gallery/view/photos_grid_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +15,13 @@ class MyApp extends StatelessWidget {
     return ProviderScope(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Photo Gallery',
         theme: ThemeData(
             primaryColor: AppColors.black,
             fontFamily: ('Lato' ),
             colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: AppColors.black)),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        home: PhotosGridView(),
       ),
     );
   }

@@ -7,7 +7,7 @@ import 'dio_connectivity_request_retrier.dart';
 class AppDio with DioMixin implements Dio {
   AppDio._() {
     options = BaseOptions(
-      baseUrl: 'https://api.unsplash.com/photos/',
+      baseUrl: 'https://api.unsplash.com/',
       contentType: 'application/json',
       connectTimeout: const Duration(seconds: 60),
       sendTimeout: const Duration(seconds: 60),
