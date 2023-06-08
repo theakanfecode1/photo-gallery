@@ -25,36 +25,40 @@ class PhotoGridItem extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            CachedNetworkImage(
-              imageUrl: photo.urls.thumb,
-              fit: BoxFit.cover,
-              cacheManager: CustomCacheManager.instance,
-              width: double.infinity,
-              height: double.infinity,
-              memCacheWidth: 200,
+            FractionallySizedBox(
+              heightFactor: 1.0,
+              widthFactor: 1.0,
+              child: CachedNetworkImage(
+                imageUrl: photo.urls.thumb,
+                fit: BoxFit.cover,
+                cacheManager: CustomCacheManager.instance,
+                memCacheWidth: 200,
+              ),
             ),
-            Container(
-              width: double.infinity,
-              height: 40,
-              alignment: Alignment.bottomLeft,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  AppColors.black.withOpacity(0.01),
-                  AppColors.black.withOpacity(0.4),
-                ],
-                tileMode: TileMode.repeated,
-              )),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
-                child: Text(
-                  photo.description.isNotEmpty
-                      ? photo.description.capitalizeFirst
-                      : photo.altDescription.capitalizeFirst,
-                  style: AppTextStyles.kH3Lightx2,
-                  overflow: TextOverflow.ellipsis,
+            FractionallySizedBox(
+              widthFactor: 1.0,
+              child: Container(
+                height: 40,
+                alignment: Alignment.bottomLeft,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    AppColors.black.withOpacity(0.01),
+                    AppColors.black.withOpacity(0.4),
+                  ],
+                  tileMode: TileMode.repeated,
+                )),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                  child: Text(
+                    photo.description.isNotEmpty
+                        ? photo.description.capitalizeFirst
+                        : photo.altDescription.capitalizeFirst,
+                    style: AppTextStyles.kH3Lightx2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
             )
