@@ -11,7 +11,7 @@ class AppTextStyles {
 
   static const kH2Light = TextStyle(
     letterSpacing: -0.63,
-    fontSize: 20.0,
+    fontSize: 22.0,
     color: AppColors.white,
     fontWeight: FontWeight.w700,
   );
@@ -20,7 +20,7 @@ class AppTextStyles {
     letterSpacing: -0.8,
     fontSize: 16.0,
     color: AppColors.white,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
   );
 
   static const kH3Lightx1 = TextStyle(
@@ -32,7 +32,7 @@ class AppTextStyles {
 
   static const kB1 = TextStyle(
     letterSpacing: -0.25,
-    fontSize: 12.0,
+    fontSize: 15.0,
     color: AppColors.white,
     fontWeight: FontWeight.w500,
   );

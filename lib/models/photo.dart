@@ -95,6 +95,7 @@ class User {
     required this.twitterUsername,
     required this.portfolioUrl,
     required this.bio,
+    required this.profileImage,
     required this.location,
     required this.instagramUsername,
     required this.totalCollections,
@@ -119,6 +120,7 @@ class User {
   late final int totalLikes;
   late final int totalPhotos;
   late final bool acceptedTos;
+  late final ProfileImage profileImage;
   late final bool forHire;
   late final Social social;
 
@@ -133,6 +135,7 @@ class User {
     portfolioUrl = json['portfolio_url'] ?? '';
     bio = json['bio'] ?? '';
     location = json['location'] ?? '';
+    profileImage = ProfileImage.fromJson(json['profile_image']);
     instagramUsername = json['instagram_username'] ?? '';
     totalCollections = json['total_collections'];
     totalLikes = json['total_likes'];
@@ -140,5 +143,23 @@ class User {
     acceptedTos = json['accepted_tos'];
     forHire = json['for_hire'];
     social = Social.fromJson(json['social']);
+  }
+}
+
+class ProfileImage {
+  ProfileImage({
+    required this.small,
+    required this.medium,
+    required this.large,
+  });
+
+  late final String small;
+  late final String medium;
+  late final String large;
+
+  ProfileImage.fromJson(Map<String, dynamic> json){
+    small = json['small'] ?? '';
+    medium = json['medium'];
+    large = json['large'];
   }
 }
