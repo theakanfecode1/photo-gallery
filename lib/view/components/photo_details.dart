@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/models/photo.dart';
 import 'package:photo_gallery/res/style/app_text_styles.dart';
+import 'package:photo_gallery/utils/cache_manager.dart';
 import 'package:photo_gallery/utils/string_ext.dart';
 
 class PhotoDetails extends StatelessWidget {
@@ -24,6 +25,7 @@ class PhotoDetails extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
                 child: CachedNetworkImage(
                   imageUrl: photo.user.profileImage.small,
+                  cacheManager: CustomCacheManager.instance,
                   height: 30,
                   width: 30,
                   fit: BoxFit.cover,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:photo_gallery/models/photo.dart';
 import 'package:photo_gallery/res/style/app_colors.dart';
 import 'package:photo_gallery/res/style/app_text_styles.dart';
+import 'package:photo_gallery/utils/cache_manager.dart';
 import 'package:photo_gallery/utils/route.dart';
 import 'package:photo_gallery/utils/string_ext.dart';
 import 'package:photo_gallery/view/photo_view.dart';
@@ -27,6 +28,7 @@ class PhotoGridItem extends StatelessWidget {
             CachedNetworkImage(
               imageUrl: photo.urls.thumb,
               fit: BoxFit.cover,
+              cacheManager: CustomCacheManager.instance,
               width: double.infinity,
               height: double.infinity,
               memCacheWidth: 200,
