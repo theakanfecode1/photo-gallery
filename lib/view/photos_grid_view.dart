@@ -77,8 +77,8 @@ class _PhotosViewState extends ConsumerState<PhotosGridView> {
                   controller: scrollController,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 5.0,
-                    mainAxisSpacing: 5.0,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10.0,
                     childAspectRatio:
                         (MediaQuery.of(context).size.width / 2) / 200,
                   ),

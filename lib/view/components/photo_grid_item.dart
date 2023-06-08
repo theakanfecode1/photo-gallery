@@ -6,7 +6,7 @@ import 'package:photo_gallery/res/style/app_text_styles.dart';
 import 'package:photo_gallery/utils/cache_manager.dart';
 import 'package:photo_gallery/utils/route.dart';
 import 'package:photo_gallery/utils/string_ext.dart';
-import 'package:photo_gallery/view/photo_view.dart';
+import 'package:photo_gallery/view/photo_full_screen_view.dart';
 
 class PhotoGridItem extends StatelessWidget {
   final Photo photo;
@@ -17,7 +17,7 @@ class PhotoGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, scaleIn(PhotoView(photo: photo)));
+        Navigator.push(context, scaleIn(PhotoFullScreenView(photo: photo)));
       },
       child: Container(
         decoration: BoxDecoration(
