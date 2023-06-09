@@ -1,9 +1,13 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:photo_gallery/core/network/services/my_http_overrides.dart';
 import 'package:photo_gallery/res/style/app_colors.dart';
 import 'package:photo_gallery/view/photos_grid_view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
 
