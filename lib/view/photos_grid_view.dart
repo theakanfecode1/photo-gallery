@@ -71,7 +71,7 @@ class _PhotosViewState extends ConsumerState<PhotosGridView> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: photosVm.when(
-            idle: () => Container(),
+            idle: () => const Center(child: LoadingIndicator()),
             loading: () => const Center(child: LoadingIndicator()),
             success: (data) => GridView.builder(
                   controller: scrollController,
