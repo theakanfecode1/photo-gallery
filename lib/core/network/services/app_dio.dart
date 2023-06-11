@@ -2,6 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:photo_gallery/core/network/services/retry_interceptor.dart';
+
 import 'dio_connectivity_request_retrier.dart';
 
 class AppDio with DioMixin implements Dio {

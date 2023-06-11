@@ -14,7 +14,7 @@ class DioConnectivityRequestRetrier {
 
 
 
-  Future scheduleRequestRetry(RequestOptions requestOptions,ErrorInterceptorHandler handler,DioError err) async {
+  Future scheduleRequestRetry(RequestOptions requestOptions,ErrorInterceptorHandler handler,DioException err) async {
     StreamSubscription? streamSubscription;
     final responseCompleter = Completer<Response>();
     streamSubscription = connectivity.onConnectivityChanged.listen((connectivityResult) {

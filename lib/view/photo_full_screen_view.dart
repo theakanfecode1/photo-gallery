@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:photo_gallery/models/photo.dart';
 import 'package:photo_gallery/res/components/loading_indicator.dart';
 import 'package:photo_gallery/res/style/app_colors.dart';
-import 'package:photo_gallery/res/style/app_text_styles.dart';
 import 'package:photo_gallery/utils/cache_manager.dart';
-import 'package:photo_gallery/utils/string_ext.dart';
 import 'package:photo_gallery/view/components/photo_details.dart';
 import 'package:photo_view/photo_view.dart';
 

@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:ui';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -22,7 +19,7 @@ class RequestStateNotifier<T> extends StateNotifier<RequestState<T>> {
       }
       return newState;
     } on Exception catch (e) {
-      if (e is DioError) {}
+      if (e is DioException) {}
       final newState = RequestState<T>.error(AppError(e));
       if (mounted) {
         state = newState;
@@ -43,7 +40,7 @@ class RequestStateNotifier<T> extends StateNotifier<RequestState<T>> {
       }
       return newState;
     } on Exception catch (e) {
-      if (e is DioError) {}
+      if (e is DioException) {}
       final newState = RequestState<T>.error(AppError(e));
       if (mounted) {
         state = newState;
