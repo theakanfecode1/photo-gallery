@@ -30,7 +30,6 @@ class RequestStateNotifier<T> extends StateNotifier<RequestState<T>> {
 
   Future<RequestState<T>> fetchNextPage(Future<T> Function() function) async {
     try {
-      // state = RequestState<T>.loading();
       final response = await function();
       final currentData = ((getSuccessData() ?? []) as List<dynamic>);
       final newItems = currentData + (response as List<dynamic>) as T;
