@@ -50,12 +50,6 @@ class PhotoFullScreenView extends StatelessWidget {
                   },
                   filterQuality: FilterQuality.none,
                 )
-
-                // CachedNetworkImage(
-                //   imageUrl: photo.urls.regular,
-                //   fit: BoxFit.contain,
-                //   cacheManager: CustomCacheManager.instance,
-                // ),
                 ),
             Positioned(
               left: 20,
