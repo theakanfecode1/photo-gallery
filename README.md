@@ -38,14 +38,13 @@ tests, follow these steps:
     - cd photo_gallery
 
 2. Run the tests:
-To separately run test for each test file flutter test test/photo_datasource_test.dart
-   test/photo_full_screen_test.dart
+To separately run test for each test file
     - For photo_grid_view_test.dart: flutter test test/photo_grid_view_test.dart
     - For photo_full_screen_test.dart: flutter test test/photo_full_screen_test.dart
     - For photo_datasource_test.dart: flutter test test/photo_datasource_test.dart
 
 To run test files all together
-    - flutter test test/photo_datasource_test.dart test/photo_full_screen_test.dart
+   -  flutter test test/photo_datasource_test.dart test/photo_full_screen_test.dart
       test/photo_grid_view_test.dart
 
 This command will run all the unit tests and display the results in the console.
